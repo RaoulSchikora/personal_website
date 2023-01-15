@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+  }
+
+  .navbar {
+    background: #08b6b9;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  .navbar__container {
+    display: flex;
+    justify-content: flex-end;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 30px;
+    padding-left: 50px;
+  }
+
+  .navbar__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+  }
+
+  .navbar__item {
+    height: 80px;
+  }
+
+  .navbar__links {
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+  }
+
+  .navbar__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: #f77062;
+    color: #fff;
+  }
+
+  .main {
+    background-color: #08b6b9;
+  }
+
+  .main__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 0 auto;
+    height: 80vh;
+    width: 100%;
+    max-width: 1300px;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  .main__content {
+    color: #000;
+    width: 100%;
+  }
+
+  .main__content h1 {
+    font-size: 6.5rem;
+    text-align: center;
+  }
+
+  .main__content p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    width: 350px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    background: #000;
+    color: #08b6b9;
+  }
+
+  .main__content h2 {
+    font-size: 3.65rem;
+    text-align: center;
+    padding-top: 10px;
+  }
