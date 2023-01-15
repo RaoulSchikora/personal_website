@@ -127,6 +127,10 @@
     border: none;
   }
 
+  .main__content label:hover {
+    color: #c2d1d2;
+  }
+
   .main__content label svg[class="toggle-off"] {
     width: 123px;
     height: 123px;
@@ -177,4 +181,8 @@
 
   .main__content h2 span {
     color: #fff;
+  }
+
+  .main__content label span:hover {
+    color: #e4f9fa;
   }
