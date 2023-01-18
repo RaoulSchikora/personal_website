@@ -5,75 +5,6 @@
     font-family: 'Oswald', sans-serif;
   }
 
-  .navbar {
-    background: #08b6b9;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-  }
-
-  .navbar__container {
-    display: flex;
-    justify-content: flex-end;
-    height: 80px;
-    z-index: 1;
-    width: 100%;
-    max-width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 30px;
-    padding-left: 50px;
-  }
-
-  .navbar__menu {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    text-align: center;
-  }
-
-  .navbar__item {
-    height: 80px;
-  }
-
-  .navbar__links {
-    color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    padding: 0 1rem;
-    height: 100%;
-  }
-
-  .navbar__btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 1rem;
-    width: 100%;
-  }
-
-  .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    padding: 10px 20px;
-    height: 100%;
-    width: 100%;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    background: #f77062;
-    color: #fff;
-  }
-
   .main {
     background-color: #08b6b9;
   }
@@ -91,6 +22,8 @@
   }
 
   .first_name {
+    position: sticky;
+    top: -40px;
     text-align: center;
     font-weight: bold;
     margin: -20px 0;
@@ -112,6 +45,7 @@
     transition: height .7s ease;
     overflow: hidden;
     text-transform: uppercase;
+    z-index: 1;
   }
 
   .main__content label {
@@ -167,6 +101,9 @@
   }
 
   .surname {
+    position: sticky;
+    bottom: 0.05em;
+    top: 1em;
     font-size: 0.57em;
     text-align: center;
     padding-top: 10px;
@@ -285,6 +222,6 @@
     width: 100%;
     background-color: #f77062;
     color: #fff;
-    z-index: 1;
+    z-index: 2;
     padding: 0.5em;
   }
