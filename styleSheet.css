@@ -1,12 +1,9 @@
 * {
     box-sizing: border-box;
+    background-color: #08b6b9;
     margin: 0;
     padding: 0;
     font-family: 'Oswald', sans-serif;
-  }
-
-  .main {
-    background-color: #08b6b9;
   }
 
   .main__container {
@@ -32,20 +29,32 @@
   .personal_description {
     position: relative;
     left: 3px;
-    font-size: 0.13em;
-    font-weight: 500;
     text-align: center;
     width: 525px;
     height: 43px;
     margin: 0px auto -10px auto;
     padding: 10px;
     border-radius: 25px;
-    background: #000;
+    background-color: #000;
     color: #fff;
     transition: height .7s ease;
     overflow: hidden;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     z-index: 1;
+  }
+
+  .personal_description h1 {
+    background-color: #000;
+    font-size: 0.13em;
+    font-weight: 500;
+    padding-bottom: .5em;
+  }
+
+  .personal_description p {
+    background-color: #000;
+    font-size: 0.11em;
+    font-weight: 500;
+    color: #e4f9fa;
   }
 
   .main__content label {
@@ -97,7 +106,7 @@
   }
 
   .main__content input:checked ~ .personal_description {
-    height: 400px;
+    height: 368px;
   }
 
   .surname {
@@ -145,7 +154,7 @@
     }
     
     .main__content input:checked ~ .personal_description {
-      height: 300px;
+      height: 283px;
     }
   }
 
@@ -173,11 +182,18 @@
       margin: 0px auto -10px auto;
       padding: 7px;
       border-radius: 20px;
+    }
+    
+    .personal_description h1 {
+      font-size: 0.14em;
+    }
+    
+    .personal_description p {
       font-size: 0.14em;
     }
 
     .main__content input:checked ~ .personal_description {
-      height: 300px;
+      height: 345px;
     }
   }
 
@@ -201,15 +217,22 @@
     .personal_description {
       left: 3px;
       width: 290px;
-      height: 30px;
+      height: 50px;
       margin: 0px auto -10px auto;
       padding: 7px;
       border-radius: 20px;
-      font-size: 0.15em;
+    }
+
+    .personal_description h1 {
+      font-size: 0.18em;
+    }
+
+    .personal_description p {
+      font-size: 0.17em;
     }
 
     .main__content input:checked ~ .personal_description {
-      height: 300px;
+      height: 399px;
     }
   }
 
