@@ -1,9 +1,9 @@
 * {
     box-sizing: border-box;
-    background-color: #08b6b9;
+    background-color: #7caebd; /*#63b7c6;#6dc3bb;#08b6b9;*/
     margin: 0;
     padding: 0;
-    font-family: 'Oswald', sans-serif;
+    font-family: sans-serif;
   }
 
   .main__container {
