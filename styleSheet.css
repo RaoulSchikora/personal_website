@@ -12,6 +12,13 @@
     font-family: 'Oswald', sans-serif;
   }
 
+  .main__circle {
+    height: 1em;
+    width: 1em;
+    background-color: #000;
+    border-radius: 50%;
+  }
+
   .main__container {
     display: flex;
     justify-content: center;
