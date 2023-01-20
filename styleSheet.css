@@ -12,13 +12,6 @@
     font-family: 'Oswald', sans-serif;
   }
 
-  .main__circle {
-    height: 1em;
-    width: 1em;
-    background-color: #000;
-    border-radius: 50%;
-  }
-
   .main__container {
     display: flex;
     justify-content: center;
@@ -31,12 +24,53 @@
     font-size: 190px;
   }
 
+  .main__content input {
+    display: none;
+  }
+
+  .main__content label {
+    cursor: pointer;
+    padding: none;
+    border: none;
+  }
+
+  .main__content label:hover {
+    color: #c2d1d2;
+  }
+
   .first_name {
     position: sticky;
     top: -40px;
     text-align: center;
     font-weight: bold;
     margin-bottom: -0.2em;
+  }
+
+  .toggle_menu {
+    display: inline-block;
+    width: 1.25em;
+    height: 0.86em;
+    background-color: #fff;
+    border-radius: 0.43em;
+    padding: 0.1em;
+    z-index: -1;
+  }
+
+  .toggle_menu:hover {
+    background-color: #e4f9fa;
+  }
+
+  .toggle_circle {
+    width: 0.66em;
+    height: 0.66em;
+    background-color: #7caebd;
+    border-radius: 50%;
+    margin: auto 0.02em;
+    transition: 0.3s ease;
+  }
+
+  .main__content input:checked ~ * .toggle_circle {
+    transform: translateX(0.36em);
   }
 
   .personal_description {
@@ -49,9 +83,8 @@
     border-radius: 0.2em;
     background-color: #000;
     color: #fff;
-    transition: height .7s ease;
+    transition: .7s ease;
     overflow: hidden;
-    /* text-transform: uppercase; */
     z-index: 1;
   }
 
@@ -68,52 +101,6 @@
     font-weight: 500;
     padding: 0.5em;
     color: #e4f9fa;
-  }
-
-  .main__content label {
-    cursor: pointer;
-    padding: none;
-    border: none;
-  }
-
-  .main__content label:hover {
-    color: #c2d1d2;
-  }
-
-  .main__content label svg[class="toggle-off"] {
-    width: 1.27em;
-    position: relative;
-    top: 0.13em;
-    fill: #fff;
-    display: inline;
-  }
-
-  .main__content label svg[class="toggle-on"] {
-    width: 1.27em;
-    position: relative;
-    top: 0.13em;
-    fill: #fff;
-    display: none;
-  }
-
-  .main__content label svg[class="toggle-off"]:hover {
-    fill: #e4f9fa;
-  }
-
-  .main__content label svg[class="toggle-on"]:hover {
-    fill: #e4f9fa;
-  }
-
-  .main__content input {
-    display: none;
-  }
-
-  .main__content input:checked ~ * label svg[class="toggle-off"] {
-    display: none;
-  }
-
-  .main__content input:checked ~ * label svg[class="toggle-on"] {
-    display: inline;
   }
 
   .main__content input:checked ~ .personal_description {
