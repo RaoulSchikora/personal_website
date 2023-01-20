@@ -1,9 +1,15 @@
+@font-face {
+  /* Load fonts locally to comply with DSGVO*/
+  font-family: 'Oswald';
+  src: url(/fonts/Oswald-Regular.woff2) format("woff2");
+}
+
 * {
     box-sizing: border-box;
-    background-color: #7caebd; /*#63b7c6;#6dc3bb;#08b6b9;*/
+    background-color: #7caebd;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Oswald', sans-serif;
   }
 
   .main__container {
@@ -15,7 +21,7 @@
     height: 100vh;
     width: 100%;
     color: #000;
-    font-size: 160px;
+    font-size: 190px;
   }
 
   .first_name {
@@ -23,18 +29,17 @@
     top: -40px;
     text-align: center;
     font-weight: bold;
-    margin: -20px 0;
+    margin-bottom: -0.2em;
   }
 
   .personal_description {
     position: relative;
     left: 3px;
     text-align: center;
-    width: 525px;
-    height: 43px;
-    margin: 0px auto -10px auto;
-    padding: 10px;
-    border-radius: 25px;
+    width: 2.7em;
+    height: 0.25em;
+    margin: auto;
+    border-radius: 0.2em;
     background-color: #000;
     color: #fff;
     transition: height .7s ease;
@@ -47,13 +52,14 @@
     background-color: #000;
     font-size: 0.13em;
     font-weight: 500;
-    padding-bottom: .5em;
+    padding: 0.2em;
   }
 
   .personal_description p {
     background-color: #000;
     font-size: 0.11em;
     font-weight: 500;
+    padding: 0.5em;
     color: #e4f9fa;
   }
 
@@ -68,19 +74,17 @@
   }
 
   .main__content label svg[class="toggle-off"] {
-    width: 1.15em;
-    height: 1.15em;
+    width: 1.27em;
     position: relative;
-    top: 32px;
+    top: 0.13em;
     fill: #fff;
     display: inline;
   }
 
   .main__content label svg[class="toggle-on"] {
-    width: 1.15em;
-    height: 1.15em;
+    width: 1.27em;
     position: relative;
-    top: 32px;
+    top: 0.13em;
     fill: #fff;
     display: none;
   }
@@ -106,17 +110,17 @@
   }
 
   .main__content input:checked ~ .personal_description {
-    height: 368px;
+    height: 2.35em;
   }
 
   .surname {
     position: sticky;
     bottom: 0.05em;
     top: 1em;
-    font-size: 0.57em;
+    font-size: 0.67em;
     text-align: center;
-    padding-top: 10px;
     font-weight: bold;
+    margin-top: -0.25em;
   }
 
   .surname span {
@@ -132,68 +136,12 @@
     .main__container{
       font-size: 120px;
     }
-    .first_name {
-      margin: -12px 0px;
-    }
-
-    .main__content label svg[class="toggle-off"] {
-      top: 23px;
-    }
-  
-    .main__content label svg[class="toggle-on"] {
-      top: 23px;
-    }
-
-    .personal_description {
-      left: 3px;
-      width: 400px;
-      height: 35px;
-      margin: 0px auto -10px auto;
-      padding: 8.5px;
-      border-radius: 20px;
-    }
-    
-    .main__content input:checked ~ .personal_description {
-      height: 283px;
-    }
   }
 
   @media screen and (max-width: 730px) {
 
     .main__container{
       font-size: 100px;
-    }
-    .first_name {
-      margin: -15px 0px;
-    }
-
-    .main__content label svg[class="toggle-off"] {
-      top: 20px;
-    }
-  
-    .main__content label svg[class="toggle-on"] {
-      top: 20px;
-    }
-
-    .personal_description {
-      left: 3px;
-      width: 340px;
-      height: 30px;
-      margin: 0px auto -10px auto;
-      padding: 7px;
-      border-radius: 20px;
-    }
-    
-    .personal_description h1 {
-      font-size: 0.14em;
-    }
-    
-    .personal_description p {
-      font-size: 0.14em;
-    }
-
-    .main__content input:checked ~ .personal_description {
-      height: 345px;
     }
   }
 
@@ -202,41 +150,10 @@
     .main__container{
       font-size: 80px;
     }
-    .first_name {
-      margin: -10px 0px;
-    }
-
-    .main__content label svg[class="toggle-off"] {
-      top: 16px;
-    }
-  
-    .main__content label svg[class="toggle-on"] {
-      top: 16px;
-    }
-
-    .personal_description {
-      left: 3px;
-      width: 290px;
-      height: 50px;
-      margin: 0px auto -10px auto;
-      padding: 7px;
-      border-radius: 20px;
-    }
-
-    .personal_description h1 {
-      font-size: 0.18em;
-    }
-
-    .personal_description p {
-      font-size: 0.17em;
-    }
-
-    .main__content input:checked ~ .personal_description {
-      height: 399px;
-    }
   }
 
   .disclaimer__container {
+    font-family: sans-serif;
     position: fixed;
     bottom: 0px;
     left: 0px;
