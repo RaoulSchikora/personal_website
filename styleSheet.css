@@ -39,43 +39,57 @@
     color: #c2d1d2;
   }
 
-  .first_name {
+  #first_name {
     position: sticky;
     top: -40px;
     text-align: center;
     font-weight: bold;
     margin-bottom: -0.2em;
-    transition: 0.3s ease;
   }
 
-  .toggle_menu {
+  #toggle_menu {
     display: inline-block;
     width: 1.25em;
     height: 0.86em;
     background-color: #fff;
     border-radius: 0.43em;
     padding: 0.1em;
-    transition: 0.3s ease;
   }
 
-  .toggle_menu:hover {
-    background-color: #e4f9fa;
+  @keyframes wobble_right {
+    0% {
+      transform: translateX(0);
+    }
+    10% {
+      transform: translateX(0.08em);
+    }
+    20%{
+      transform: translateX(0);
+    }
+    100%{
+      transform: translateX(0);
+    }
   }
 
-  .toggle_circle {
+  #toggle_circle {
     width: 0.66em;
     height: 0.66em;
     background-color: #7caebd;
     border-radius: 50%;
     margin: auto 0.02em;
-    transition: 0.3s ease;
+    transition: transform 0.3s ease;
+    animation: wobble_right 3.5s ease-out 2s infinite;
   }
 
-  .main__content input:checked ~ * .toggle_circle {
+  #toggle_menu:hover {
+    background-color: #e4f9fa;
+  }
+
+  .main__content input:checked ~ * #toggle_circle {
     transform: translateX(0.36em);
   }
 
-  .personal_description {
+  #personal_description {
     background-color: #000;
     position: relative;
     left: 3px;
@@ -85,19 +99,19 @@
     margin: auto;
     border-radius: 0.2em;
     color: #fff;
-    transition: .7s ease;
+    transition: height .7s ease;
     overflow: hidden;
     z-index: 1;
   }
 
-  .personal_description h1 {
+  #personal_description h1 {
     background-color: #000;
     font-size: 0.13em;
     font-weight: 500;
     padding: 0.2em;
   }
 
-  .personal_description p {
+  #personal_description p {
     background-color: #000;
     font-size: 0.11em;
     font-weight: 500;
@@ -105,11 +119,11 @@
     color: #e4f9fa;
   }
 
-  .main__content input:checked ~ .personal_description {
+  .main__content input:checked ~ #personal_description {
     height: 3.1em;
   }
 
-  .surname {
+  #surname {
     position: sticky;
     bottom: 0.05em;
     top: 1em;
@@ -117,14 +131,13 @@
     text-align: center;
     font-weight: bold;
     margin-top: -0.25em;
-    transition: 0.3s ease;
   }
 
-  .surname span {
+  #surname span {
     color: #fff;
   }
 
-  .surname label span:hover {
+  #surname label span:hover {
     color: #e4f9fa;
   }
 

@@ -10,6 +10,7 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 const hiddenElements = document.querySelectorAll('.hidden');
+const toggleBtn = document.getElementById("toggle_menu");
 const cvBtn = document.getElementById("cv_btn");
 
 hiddenElements.forEach((el) => observer.observe(el));
@@ -20,4 +21,8 @@ cvBtn.addEventListener('click', function () {
     } else {
         cvElement.style.display = "flex";
     }
+});
+toggleBtn.addEventListener('click', function (){
+    var circle = document.getElementById("toggle_circle");
+    circle.style.animation = "unset";
 });
