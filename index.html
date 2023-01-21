@@ -1,44 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Website created by Raoul Schikora for himself -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Raoul Schikora</title>
     <link rel="stylesheet" href="styleSheet.css" />
 </head>
+
 <body>
     <!-- Name section -->
     <div class="main">
         <div class="main__container">
             <div class="main__content">
-                <input id="check" type="checkbox">
+                <input id="check" type="checkbox" />
                 <div class="first_name">RA<label for="check"><div class="toggle_menu">
-                        <div class="toggle_circle"></div></div></label>L
-            </div>
-                <div class="personal_description">
-                    <label for="check"><h1>MATH ENTHUSIASTIC COMPUTER SCIENTIST</h1>
-                    <p>I am a computer scientist (M.Sc.) with a degree in mathematics (B.Sc.) currently 
-                    looking for a job as a software developer. Especially, working with an object-oriented
-                    language appeals to me, where I am thinking in particular of Java or C++. In Java
-                    I already have a good know-how and in combination with C I am confident to be able
-                    to quickly improve my basic skills in C++ as well. In general, however, I do not 
-                    limit myself to these two programming languages. On the contrary, as long as the 
-                    end product convinces me, I work with great enthusiasm into new languages and 
-                    technologies. Software for applications in the areas of mobility, such as 
-                    passenger or freight transport, as well as for medical purposes are of particular 
-                    interest to me. </p>
-                    </label>
+                    <div class="toggle_circle"></div></div></label>L
                 </div>
-                <div class="surname">SCHIK<label for="check"><span>O</span></label>RA</div>
+                <div class="personal_description">
+                    <label for="check">
+                        <h1>MATH ENTHUSIASTIC COMPUTER SCIENTIST</h1>
+                        <p>
+                            I am a computer scientist (M.Sc.) with a degree in mathematics
+                            (B.Sc.) currently looking for a job as a software developer.
+                            Especially, working with an object-oriented language appeals to
+                            me, where I am thinking in particular of Java or C++. In Java I
+                            already have a good know-how and in combination with C I am
+                            confident to be able to quickly improve my basic skills in C++
+                            as well. However, I do not limit myself to these two programming
+                            languages. On the contrary, as long as the end product convinces
+                            me, I work with great enthusiasm into new languages and
+                            technologies. Software for applications in the areas of
+                            mobility, e.g., passenger or freight transport, as well as for
+                            medical purposes are of particular interest to me.
+                        </p>
+                    </label>
+                    <nav class="navbar">
+                        <ul class="navbar__menu">
+                            <li class="navbar__item">
+                                <a href='#cv' id="cv_btn">Curriculum Vitae</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a href="/">Links</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a href="/">Contacts</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="surname">
+                    SCHIK<label for="check"><span>O</span></label>RA
+                </div>
             </div>
         </div>
+    </div>
+    <div class="hidden" id="cv">
+                Test
     </div>
     <div class="disclaimer">
         <div class="disclaimer__container">
             This site is currently under construction
         </div>
     </div>
+    <script src="app.js"></script>
 </body>
 </html>

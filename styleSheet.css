@@ -9,6 +9,7 @@
     background-color: #7caebd;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
     font-family: 'Oswald', sans-serif;
   }
 
@@ -18,7 +19,7 @@
     align-items: center;
     text-decoration: none;
     margin: 0 auto;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     color: #000;
     font-size: 190px;
@@ -44,6 +45,7 @@
     text-align: center;
     font-weight: bold;
     margin-bottom: -0.2em;
+    transition: 0.3s ease;
   }
 
   .toggle_menu {
@@ -53,7 +55,7 @@
     background-color: #fff;
     border-radius: 0.43em;
     padding: 0.1em;
-    z-index: -1;
+    transition: 0.3s ease;
   }
 
   .toggle_menu:hover {
@@ -74,6 +76,7 @@
   }
 
   .personal_description {
+    background-color: #000;
     position: relative;
     left: 3px;
     text-align: center;
@@ -81,7 +84,6 @@
     height: 0.25em;
     margin: auto;
     border-radius: 0.2em;
-    background-color: #000;
     color: #fff;
     transition: .7s ease;
     overflow: hidden;
@@ -104,7 +106,7 @@
   }
 
   .main__content input:checked ~ .personal_description {
-    height: 2.35em;
+    height: 3.1em;
   }
 
   .surname {
@@ -115,6 +117,7 @@
     text-align: center;
     font-weight: bold;
     margin-top: -0.25em;
+    transition: 0.3s ease;
   }
 
   .surname span {
@@ -144,6 +147,61 @@
     .main__container{
       font-size: 80px;
     }
+  }
+
+  .navbar {
+    display: flex;
+    font-size: 0.13em;
+    margin-top: 0.4em;
+  }
+
+  .navbar__menu {
+    display: grid;
+    grid-template-columns: auto;
+    list-style: none;
+    width: 100%;
+    align-items: center;
+  }
+
+  .navbar__item {
+    display: flex;
+    width: 100%;
+  }
+
+  .navbar a {
+    display: flex;
+    color: #e4f9fa;
+    text-decoration: none;
+    justify-content: center;
+    text-align: center;
+    background-color: #000;
+    width: 100%;
+    padding: 0.2em;
+  }
+
+  .navbar a:hover {
+    background-color: #e4f9fa;
+    color: #000;
+    transition: all 0.3s ease;
+  }
+
+  .hidden {
+    opacity: 0;
+    transition: opacity 10s ease;
+  }
+
+  .show {
+    opacity: 1;
+  }
+
+  #cv {
+    display: none;
+    position: relative;
+    top: 3em;
+    font-size: 2rem;
+    font-weight: bold;
+    min-height: 100vh;
+    color: #000;
   }
 
   .disclaimer__container {
