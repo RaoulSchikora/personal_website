@@ -6,11 +6,14 @@
 
 * {
     box-sizing: border-box;
-    background-color: #7caebd;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
     font-family: 'Oswald', sans-serif;
+  }
+
+  body {
+    background-color: #7caebd;
   }
 
   .main__container {
@@ -41,7 +44,7 @@
 
   #first_name {
     position: sticky;
-    top: -40px;
+    top: -0.2em;
     text-align: center;
     font-weight: bold;
     margin-bottom: -0.2em;
