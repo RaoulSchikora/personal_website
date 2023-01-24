@@ -9,9 +9,23 @@ const fixed = 'fixed';
 const sticky = 'sticky';
 const hiddenElements = document.querySelectorAll('.hidden');
 const toggleBtn = document.getElementById('toggle_menu');
+const circle = document.getElementById('toggle_circle');
 const cvBtn = document.getElementById('cv_btn');
 const firstName = document.getElementById('first_name');
 const offsetFirstName = firstName.offsetTop;
+const cvSection = document.getElementById('cv');
+const cvTimesFrom = document.querySelectorAll('.cv__item .from');
+const cvTimesTo = document.querySelectorAll('.cv__item .to');
+const cvItemDivs = document.querySelectorAll('.cv__item div');
+const cvTimeline = document.getElementById('timeline');
+const cvTimelineDotList = document.getElementById('timeline_dot_list');
+const cvTimelineContainer = document.getElementById('timeline__container');
+const cvListContainer = document.getElementById('cv__list_container');
+
+const DIST_TIMELINE_EVENTS = 10;
+
+const cvMinDate = minDate(cvTimesFrom);
+const cvMaxDate = maxDate(cvTimesTo);
 
 // Observer constant for hidden elements adding show class
 // to the element, which changes opacity from 0 to 1 in 
@@ -21,6 +35,16 @@ const hiddenElemObserver = new IntersectionObserver((entries) => {
         console.log(entry)
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
+            
+            if(entry.target.id == 'cv'){
+                // translate the container of the CV list such that it overlays
+                // the container of the timeline
+                let yDirect = cvTimelineContainer.offsetHeight;
+                cvListContainer.style.transform = 
+                    'translateY(' + (-yDirect + 55) + 'px)';
+                    // the plus 55 arise from padding top (40px) on the timeline
+                    // and 15px from the dot
+            }
         }
     });
 });
@@ -28,21 +52,93 @@ const hiddenElemObserver = new IntersectionObserver((entries) => {
 /* ----- actions ----- */
 
 // observe each hidden element
-hiddenElements.forEach((el) => hiddenElemObserver.observe(el));
+hiddenElements.forEach((elem) => hiddenElemObserver.observe(elem));
 
 // add event listener to CV-button opening CV-Section on click
 cvBtn.addEventListener('click', function () {
-    var cvElement = document.getElementById('cv');
-    if (cvElement.style.display != none) {
-        cvElement.style.display = none;
+    if (cvSection.style.display != none) {
+        cvSection.style.display = none;
     } else {
-        cvElement.style.display = flex;
+        cvSection.style.display = flex;
     }
 });
 
-// add event listener to circle canceling its wobble-animation
-// toggle menu has been toggled for the first time
+// add event listener to toggleBtn canceling the wobble-animation
+// once the toggle menu has been toggled for the first time
 toggleBtn.addEventListener('click', function (){
-    var circle = document.getElementById('toggle_circle');
     circle.style.animation = unset;
 });
+
+// calculate and set the length of the cv-timeline
+cvTimeline.style.height =
+    ((getNumberOfMonths(cvMinDate, cvMaxDate) + 12) * DIST_TIMELINE_EVENTS) + 'px';
+
+// set the year-dots on the timeline
+for (year = cvMinDate.getFullYear(); year <= cvMaxDate.getFullYear()+1 ; ++year) {
+    var li = document.createElement('li');
+    var div = document.createElement('div');
+    li.classList.add('timeline_dot');
+    li.style.height = (12 * DIST_TIMELINE_EVENTS) + 'px';
+    li.appendChild(div);
+    div.innerText = year.toString();
+    cvTimelineDotList.appendChild(li);
+};
+cvTimelineDotList.lastChild.style.height = '30px';
+
+// set the height of the cv items
+cvItemDivs.forEach(function (elem) {
+    let start = new Date (elem.querySelector('.from').dateTime);
+    let end = new Date (elem.querySelector('.to').dateTime);
+    let numMonth = getNumberOfMonths(start,end);
+    elem.style.height = (numMonth * DIST_TIMELINE_EVENTS - 5) + 'px';
+    if (numMonth < 10) {
+        elem.style.padding = '0px 15px';
+    }
+});
+
+// set cv item divs at the right height position
+cvItemDivs.forEach(function (elem) {
+    let startDiv = new Date(elem.querySelector('.from').dateTime);
+    let timelineStart = new Date (cvMinDate.getFullYear() + '-01');
+    elem.style.transform = 
+        'translateY(' + 
+        ((getNumberOfMonths(timelineStart, startDiv) - 1) * DIST_TIMELINE_EVENTS) 
+        + 'px)';
+});
+
+/* ----- Utils ----- */
+
+// returns the minimal date of the elements, each having a datetime
+// attribute
+function minDate (froms) {
+    let fromDates = attrToDates(froms);
+    let min = new Date(Math.min.apply(null, fromDates));
+    return min;
+};
+
+// returns the maximal date of the elements, each having a datetime
+// attribute
+function maxDate (tos) {
+    let toDates = attrToDates(tos);
+    let max = new Date(Math.max.apply(null, toDates));
+    return max;
+};
+
+// returns a list of dates for the given list of elements each
+// having a dateTime attribute
+function attrToDates(elemList) {
+    let dates = [];
+    for (const elem of elemList){
+        dates.push(new Date(elem.dateTime));
+    }
+    return dates;
+};
+
+// function returning the number of month between two dates. 
+// Each months is calculated completely, e.g., 
+// getNumberOfMonths(new Date(2022-11-15),new Date(2023-01-23)=3
+function getNumberOfMonths(from, to) {
+    let fullYears = to.getFullYear() - from.getFullYear() - 1;
+    let months = fullYears * 12 + to.getMonth() + (12 - from.getMonth() + 1);
+    return months;
+};
