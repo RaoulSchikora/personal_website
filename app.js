@@ -21,8 +21,10 @@ const cvTimeline = document.getElementById('timeline');
 const cvTimelineDotList = document.getElementById('timeline_dot_list');
 const cvTimelineContainer = document.getElementById('timeline__container');
 const cvListContainer = document.getElementById('cv__list_container');
+const cvItems = document.querySelectorAll('cv__item');
 
 const DIST_TIMELINE_EVENTS = 10;
+const PADDING_TOP = 5;
 
 const cvMinDate = minDate(cvTimesFrom);
 const cvMaxDate = maxDate(cvTimesTo);
@@ -90,7 +92,7 @@ cvItemDivs.forEach(function (elem) {
     let start = new Date (elem.querySelector('.from').dateTime);
     let end = new Date (elem.querySelector('.to').dateTime);
     let numMonth = getNumberOfMonths(start,end);
-    elem.style.height = (numMonth * DIST_TIMELINE_EVENTS - 5) + 'px';
+    elem.style.height = (numMonth * DIST_TIMELINE_EVENTS - PADDING_TOP) + 'px';
     if (numMonth < 10) {
         elem.style.padding = '0px 15px';
     }
