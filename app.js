@@ -28,28 +28,6 @@ const PADDING_TOP = 5;
 const cvMinDate = minDate(cvTimesFrom);
 const cvMaxDate = maxDate(cvTimesTo);
 
-// Observer constant for hidden elements adding show class
-// to the element, which changes opacity from 0 to 1 in 
-// several seconds
-// const hiddenElemObserver = new IntersectionObserver((entries) => {
-//     entries.forEach((entry) => {
-//         console.log(entry)
-//         if (entry.isIntersecting) {
-//             entry.target.classList.add('show');
-            
-//             if(entry.target.id == 'cv'){
-//                 // translate the container of the CV list such that it overlays
-//                 // the container of the timeline
-//                 let yDirect = cvTimelineContainer.offsetHeight;
-//                 cvListContainer.style.transform = 
-//                     'translateY(' + (-yDirect + 55) + 'px)';
-//                     // the plus 55 arise from padding top (40px) on the timeline
-//                     // and 15px from the dot
-//             }
-//         }
-//     });
-// });
-
 // Observer constant letting a div slide in from left or right
 // when the parent becomes visible (enters the viewport) 
 const slideElemObserver = new IntersectionObserver((entries) => {
@@ -62,8 +40,6 @@ const slideElemObserver = new IntersectionObserver((entries) => {
 
 /* ----- actions ----- */
 
-// observe each hidden element
-// hiddenElements.forEach((elem) => hiddenElemObserver.observe(elem));
 // observe all divs of CV items
 cvItemDivs.forEach((elem) => slideElemObserver.observe(elem));
 
@@ -94,7 +70,7 @@ toggleBtn.addEventListener('click', function (){
 
 // calculate and set the length of the cv-timeline
 cvTimeline.style.height =
-    ((getNumberOfMonths(cvMinDate, cvMaxDate) + 12) * DIST_TIMELINE_EVENTS) + 'px';
+    ((getNumOfMonths(cvMinDate, cvMaxDate) + 12) * DIST_TIMELINE_EVENTS) + 'px';
 
 // set the year-dots on the timeline
 for (year = cvMinDate.getFullYear(); year <= cvMaxDate.getFullYear()+1 ; ++year) {
@@ -112,7 +88,7 @@ cvTimelineDotList.lastChild.style.height = '30px';
 cvItemDivs.forEach(function (elem) {
     let start = new Date (elem.querySelector('.from').dateTime);
     let end = new Date (elem.querySelector('.to').dateTime);
-    let numMonth = getNumberOfMonths(start,end);
+    let numMonth = getNumOfMonths(start,end);
     elem.style.height = (numMonth * DIST_TIMELINE_EVENTS - PADDING_TOP) + 'px';
     if (numMonth < 10) {
         elem.style.padding = '0px 15px';
@@ -125,7 +101,7 @@ cvItemDivs.forEach(function (elem) {
     let timelineStart = new Date (cvMinDate.getFullYear() + '-01');
     console.log(elem);
     elem.style.top = 
-        ((getNumberOfMonths(timelineStart, startDiv) - 1) * DIST_TIMELINE_EVENTS) 
+        ((getNumOfMonths(timelineStart, startDiv) - 1) * DIST_TIMELINE_EVENTS) 
         + 'px';
 
 });
@@ -160,8 +136,8 @@ function attrToDates(elemList) {
 
 // function returning the number of month between two dates. 
 // Each months is calculated completely, e.g., 
-// getNumberOfMonths(new Date(2022-11-15),new Date(2023-01-23)=3
-function getNumberOfMonths(from, to) {
+// getNumOfMonths(new Date(2022-11-15),new Date(2023-01-23)=3
+function getNumOfMonths(from, to) {
     let fullYears = to.getFullYear() - from.getFullYear() - 1;
     let months = fullYears * 12 + to.getMonth() + (12 - from.getMonth() + 1);
     return months;
