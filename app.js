@@ -7,7 +7,6 @@ const flex = 'flex';
 const unset = 'unset';
 const fixed = 'fixed';
 const sticky = 'sticky';
-const hiddenElements = document.querySelectorAll('.hidden');
 const toggleBtn = document.getElementById('toggle_menu');
 const circle = document.getElementById('toggle_circle');
 const cvBtn = document.getElementById('cv_btn');
@@ -21,7 +20,7 @@ const cvTimeline = document.getElementById('timeline');
 const cvTimelineDotList = document.getElementById('timeline_dot_list');
 const cvTimelineContainer = document.getElementById('timeline__container');
 const cvListContainer = document.getElementById('cv__list_container');
-const cvItems = document.querySelectorAll('cv__item');
+const cvItems = document.querySelectorAll('.cv__item');
 
 const DIST_TIMELINE_EVENTS = 10;
 const PADDING_TOP = 5;
@@ -32,21 +31,31 @@ const cvMaxDate = maxDate(cvTimesTo);
 // Observer constant for hidden elements adding show class
 // to the element, which changes opacity from 0 to 1 in 
 // several seconds
-const hiddenElemObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        console.log(entry)
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
+// const hiddenElemObserver = new IntersectionObserver((entries) => {
+//     entries.forEach((entry) => {
+//         console.log(entry)
+//         if (entry.isIntersecting) {
+//             entry.target.classList.add('show');
             
-            if(entry.target.id == 'cv'){
-                // translate the container of the CV list such that it overlays
-                // the container of the timeline
-                let yDirect = cvTimelineContainer.offsetHeight;
-                cvListContainer.style.transform = 
-                    'translateY(' + (-yDirect + 55) + 'px)';
-                    // the plus 55 arise from padding top (40px) on the timeline
-                    // and 15px from the dot
-            }
+//             if(entry.target.id == 'cv'){
+//                 // translate the container of the CV list such that it overlays
+//                 // the container of the timeline
+//                 let yDirect = cvTimelineContainer.offsetHeight;
+//                 cvListContainer.style.transform = 
+//                     'translateY(' + (-yDirect + 55) + 'px)';
+//                     // the plus 55 arise from padding top (40px) on the timeline
+//                     // and 15px from the dot
+//             }
+//         }
+//     });
+// });
+
+// Observer constant letting a div slide in from left or right
+// when the parent becomes visible (enters the viewport) 
+const slideElemObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show__slide_in');
         }
     });
 });
@@ -54,7 +63,9 @@ const hiddenElemObserver = new IntersectionObserver((entries) => {
 /* ----- actions ----- */
 
 // observe each hidden element
-hiddenElements.forEach((elem) => hiddenElemObserver.observe(elem));
+// hiddenElements.forEach((elem) => hiddenElemObserver.observe(elem));
+// observe all divs of CV items
+cvItemDivs.forEach((elem) => slideElemObserver.observe(elem));
 
 // add event listener to CV-button opening CV-Section on click
 cvBtn.addEventListener('click', function () {
@@ -62,6 +73,16 @@ cvBtn.addEventListener('click', function () {
         cvSection.style.display = none;
     } else {
         cvSection.style.display = flex;
+        if (cvListContainer.style.transform == '') {
+            // translate the container of the CV list such that it overlays
+            // the container of the timeline
+            let yDirect = cvTimelineContainer.offsetHeight;
+            cvListContainer.style.transform = 
+            'translateY(' + (-yDirect + 55) + 'px)';
+            // the plus 55 arise from padding top (40px) on the timeline
+            // and 15px from the dot
+        }
+        cvSection.classList.add('show');
     }
 });
 
@@ -102,10 +123,11 @@ cvItemDivs.forEach(function (elem) {
 cvItemDivs.forEach(function (elem) {
     let startDiv = new Date(elem.querySelector('.from').dateTime);
     let timelineStart = new Date (cvMinDate.getFullYear() + '-01');
-    elem.style.transform = 
-        'translateY(' + 
+    console.log(elem);
+    elem.style.top = 
         ((getNumberOfMonths(timelineStart, startDiv) - 1) * DIST_TIMELINE_EVENTS) 
-        + 'px)';
+        + 'px';
+
 });
 
 /* ----- Utils ----- */
