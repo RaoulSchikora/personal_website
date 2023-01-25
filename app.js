@@ -11,7 +11,7 @@ const toggleBtn = document.getElementById('toggle_menu');
 const circle = document.getElementById('toggle_circle');
 const cvBtn = document.getElementById('cv_btn');
 const firstName = document.getElementById('first_name');
-const offsetFirstName = firstName.offsetTop;
+const surname = document.getElementById('surname');
 const cvSection = document.getElementById('cv');
 const cvTimesFrom = document.querySelectorAll('.cv__item .from');
 const cvTimesTo = document.querySelectorAll('.cv__item .to');
@@ -21,9 +21,12 @@ const cvTimelineDotList = document.getElementById('timeline_dot_list');
 const cvTimelineContainer = document.getElementById('timeline__container');
 const cvListContainer = document.getElementById('cv__list_container');
 const cvItems = document.querySelectorAll('.cv__item');
+const toggleMenusSmall = document.querySelectorAll('.toggle_menu_small');
 
 const DIST_TIMELINE_EVENTS = 10;
 const PADDING_TOP = 5;
+
+const offsetFirstName = firstName.offsetTop;
 
 const cvMinDate = minDate(cvTimesFrom);
 const cvMaxDate = maxDate(cvTimesTo);
@@ -38,16 +41,49 @@ const slideElemObserver = new IntersectionObserver((entries) => {
     });
 });
 
+// Observer constant letting a small toggle menu appear once
+// the surname is out of the ViewPort
+const surnameObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+            toggleMenusSmall.forEach((entry) => {
+                entry.classList.add('show__opacity');
+            });
+        } else {
+            toggleMenusSmall.forEach((entry) => {
+                entry.classList.remove('show__opacity');
+                if(entry.querySelector('.toggle_circle_small')
+                        .classList.contains('menu__clicked')){
+                    entry.querySelector('.toggle_circle_small')
+                        .classList.remove('menu__clicked');
+                }
+            });
+        }
+    });
+});
+
 /* ----- actions ----- */
 
 // observe all divs of CV items
 cvItemDivs.forEach((elem) => slideElemObserver.observe(elem));
 
+// observe surname
+surnameObserver.observe(surname);
+
+// add event listeners to small toggle menus
+toggleMenusSmall.forEach((elem) => elem.addEventListener('click', function () {
+    var toggleCircle = this.querySelector('.toggle_circle_small');
+    if(toggleCircle.classList.contains('menu__clicked')){
+        toggleCircle.classList.remove('menu__clicked');
+    } else {
+        toggleCircle.classList.add('menu__clicked');
+        firstName.scrollIntoView();
+    }
+}));
+
 // add event listener to CV-button opening CV-Section on click
 cvBtn.addEventListener('click', function () {
-    if (cvSection.style.display != none) {
-        cvSection.style.display = none;
-    } else {
+    if (cvSection.style.display == none)  {
         cvSection.style.display = flex;
         if (cvListContainer.style.transform == '') {
             // translate the container of the CV list such that it overlays
@@ -58,7 +94,6 @@ cvBtn.addEventListener('click', function () {
             // the plus 55 arise from padding top (40px) on the timeline
             // and 15px from the dot
         }
-        cvSection.classList.add('show');
     }
 });
 
