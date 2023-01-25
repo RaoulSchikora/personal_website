@@ -205,6 +205,7 @@
     top: 40vh;
     font-weight: bold;
     min-height: 100vh;
+    height: auto;
     color: #000;
     width: 100%;
   }
@@ -403,6 +404,25 @@
     opacity: 1 !important;
     filter: blur(0) !important;
     transform: translateX(0) !important;
+  }
+
+  .social_media {
+    display: flex;
+    position: relative; 
+    justify-content: center;
+    margin: 400px 0 3rem 0;
+    width: 100%;
+  }
+
+  .social_media__container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 600px;
+  }
+
+  .social_media__container svg {
+    fill: #fff;
+    width: 5rem;
   }
 
   .disclaimer__container {
