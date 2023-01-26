@@ -24,6 +24,7 @@ const cvListContainer = document.getElementById('cv__list_container');
 const cvItems = document.querySelectorAll('.cv__item');
 const toggleMenusSmall = document.querySelectorAll('.toggle_menu_small');
 const socialMedia = document.getElementById('social_media');
+const contactsBtn = document.getElementById('contacts_btn');
 
 const DIST_TIMELINE_EVENTS = 10;
 const PADDING_TOP = 5;
@@ -98,7 +99,23 @@ cvBtn.addEventListener('click', function () {
         }
     }
     if (socialMedia.style.display == none) {
-        socialMedia.style.display = flex
+        socialMedia.style.display = flex;
+    }
+});
+
+// add event listener to Contacts-button opening the social_media container
+// and hides the cvSection container and removes the slide_in class from
+// the contained divs
+contactsBtn.addEventListener('click', function () {
+    if (socialMedia.style.display == none) {
+        socialMedia.style.display = flex;
+    }
+    if (cvSection.style.display == flex) {
+        console.log('yeah1');
+        cvSection.style.display = none;
+        cvItemDivs.forEach((elem) => {
+            elem.classList.remove('show__slide_in');
+        });
     }
 });
 

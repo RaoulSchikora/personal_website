@@ -349,6 +349,18 @@
     border-style: solid;
   }
 
+  .cv__item div:hover {
+    background: #cf6b60;
+  }
+
+  .right_side:hover:before {
+    border-color: transparent #cf6b60 transparent transparent;
+  }
+
+  .left_side:hover:before {
+    border-color: transparent transparent transparent #cf6b60;
+  }
+
   .right_side {
     left: 70px;
   }
@@ -410,7 +422,7 @@
     display: none;
     position: relative; 
     justify-content: center;
-    margin: 140px 0 3rem 0;
+    margin: 240px 0 3rem 0;
     width: 100%;
   }
 
