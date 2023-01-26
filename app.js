@@ -1,5 +1,6 @@
 // preload
 document.getElementById('cv').style.display = 'none';
+document.getElementById('social_media').style.display = 'none';
 
 // constants
 const none = 'none';
@@ -22,6 +23,7 @@ const cvTimelineContainer = document.getElementById('timeline__container');
 const cvListContainer = document.getElementById('cv__list_container');
 const cvItems = document.querySelectorAll('.cv__item');
 const toggleMenusSmall = document.querySelectorAll('.toggle_menu_small');
+const socialMedia = document.getElementById('social_media');
 
 const DIST_TIMELINE_EVENTS = 10;
 const PADDING_TOP = 5;
@@ -95,6 +97,9 @@ cvBtn.addEventListener('click', function () {
             // and 15px from the dot
         }
     }
+    if (socialMedia.style.display == none) {
+        socialMedia.style.display = flex
+    }
 });
 
 // add event listener to toggleBtn canceling the wobble-animation
@@ -134,7 +139,6 @@ cvItemDivs.forEach(function (elem) {
 cvItemDivs.forEach(function (elem) {
     let startDiv = new Date(elem.querySelector('.from').dateTime);
     let timelineStart = new Date (cvMinDate.getFullYear() + '-01');
-    console.log(elem);
     elem.style.top = 
         ((getNumOfMonths(timelineStart, startDiv) - 1) * DIST_TIMELINE_EVENTS) 
         + 'px';

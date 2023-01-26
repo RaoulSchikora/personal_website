@@ -202,7 +202,7 @@
   #cv {
     display: none;
     position: relative;
-    top: 40vh;
+    top: 25vh;
     font-weight: bold;
     min-height: 100vh;
     height: auto;
@@ -406,11 +406,11 @@
     transform: translateX(0) !important;
   }
 
-  .social_media {
-    display: flex;
+  #social_media {
+    display: none;
     position: relative; 
     justify-content: center;
-    margin: 400px 0 3rem 0;
+    margin: 140px 0 3rem 0;
     width: 100%;
   }
 
