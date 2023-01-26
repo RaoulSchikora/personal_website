@@ -142,27 +142,6 @@
     color: #e4f9fa;
   }
 
-  @media screen and (max-width: 1300px) {
-
-    .main__container{
-      font-size: 120px;
-    }
-  }
-
-  @media screen and (max-width: 730px) {
-
-    .main__container{
-      font-size: 100px;
-    }
-  }
-
-  @media screen and (max-width: 380px) {
-
-    .main__container{
-      font-size: 80px;
-    }
-  }
-
   .navbar {
     display: flex;
     font-size: 0.13em;
@@ -199,6 +178,54 @@
     transition: all 0.3s ease;
   }
 
+  @media screen and (max-width: 600px) {
+
+    .main__container{
+      font-size: 150px;
+    }
+  }
+
+  @media screen and (max-width: 470px) {
+
+    .main__container{
+      font-size: 130px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+
+    .main__container{
+      font-size: 110px;
+    }
+  }
+
+  @media screen and (max-width: 430px) {
+
+    .main__container{
+      font-size: 100px;
+    }
+
+    #personal_description {
+      height: 0.3em;
+    }
+
+    #personal_description h1{
+      font-size: 0.15em;
+    }
+
+    #personal_description p{
+      font-size: 0.15em;
+    }
+
+    .main__content input:checked ~ #personal_description {
+      height: 5.1em;
+    }
+
+    .navbar {
+      font-size: 0.15em;
+    }
+  }
+
   #cv {
     display: none;
     position: relative;
@@ -230,6 +257,14 @@
     padding-left: 0.2em;
     background-color: #7caebd;
     z-index: 2;
+  }
+
+  @media screen and (max-width: 600px) {
+    
+    .header {
+      font-size: 2rem;
+    }
+    
   }
 
   .header__container {
