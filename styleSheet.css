@@ -121,7 +121,7 @@
   }
 
   .main__content input:checked ~ #personal_description {
-    height: 3.1em;
+    height: 2.8em;
   }
 
   #surname {
@@ -218,7 +218,7 @@
     }
 
     .main__content input:checked ~ #personal_description {
-      height: 5.1em;
+      height: 4.7em;
     }
 
     .navbar {
