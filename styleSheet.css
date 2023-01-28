@@ -613,6 +613,10 @@
         padding: 0 !important;
         z-index: 0;
       }
+
+      .cv__item a {
+        pointer-events: none;
+      }
   
       .hidden__slide.left_side {
         opacity: 1;
