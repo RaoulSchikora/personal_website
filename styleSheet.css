@@ -248,26 +248,39 @@
 
   @media screen and (max-width: 600px) {
 
-    .main__container{
+    .main{
       font-size: 150px;
     }
   }
 
   @media screen and (max-width: 470px) {
 
-    .main__container{
+    .main{
       font-size: 130px;
     }
-  }
 
-  @media screen and (max-width: 400px) {
+    #personal_description {
+      height: 0.28em;
+    }
 
-    .main__container{
-      font-size: 110px;
+    #personal_description h1{
+      font-size: 0.15em;
+    }
+
+    #personal_description p{
+      font-size: 0.14em;
+    }
+
+    .main__content input:checked ~ #personal_description {
+      height: 4em;
+    }
+
+    .navbar {
+      font-size: 0.15em;
     }
   }
 
-  @media screen and (max-width: 430px) {
+  @media screen and (max-width: 390px) {
 
     .main__container{
       font-size: 100px;
