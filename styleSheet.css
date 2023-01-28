@@ -621,6 +621,13 @@
         transition: none;
       }
 
+      .hidden__slide.right_side {
+        opacity: 1;
+        filter: none;
+        transform: none;
+        transition: none;
+      }
+
       .left_side {
         left: -90px;
       }
