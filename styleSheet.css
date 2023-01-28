@@ -486,6 +486,7 @@
     border-width: 8px 16px 8px 0;
     border-color: transparent #f77062 transparent transparent;
   }
+
   .left_side {
     left: -570px;
     text-align: right;
@@ -534,6 +535,124 @@
     transform: translateX(0) !important;
   }
 
+  @media screen and (max-width: 1180px) {
+
+    .header {
+      width: 100vw;
+    }
+
+    #cv_and_timeline {
+      width: 640px;
+      margin: 0 auto;
+    }
+
+    #timeline__container {
+      width: fit-content;
+    }
+
+    #cv__list_container {
+      width: fit-content;
+    }
+
+    #timeline {
+      margin: 0 67px;
+    }
+
+    .cv__item {
+      margin: 0 67px;
+    }
+
+    .left_side {
+      left: 70px;
+      text-align: left;
+      margin: 0 auto;
+    }
+
+    .left_side::before {
+      left: -15px;
+      border-width: 8px 16px 8px 0;
+      border-color: transparent #f77062 transparent transparent;
+    }
+
+    .left_side:hover:before {
+      border-color: transparent #cf6b60 transparent transparent;
+    }
+
+    .hidden__slide.left_side {
+      transform: translateX(100%);
+    }
+
+    .right_side {
+      border-style: dotted;
+      border-color: #5a2721;
+    }
+
+    @media screen and (max-width: 650px) {
+
+      #cv_and_timeline {
+        width: 530px;
+        margin: 0 auto;
+      }
+      
+      .cv__item div {
+        width: 385px;
+      }
+
+    }
+
+    @media screen and (max-width: 530px) {
+
+      #cv_and_timeline {
+        width: fit-content;
+        margin: 0 auto;
+      }
+  
+      .cv__item div {
+        width: 20px;
+        border-radius: 5px;
+        padding: 0 !important;
+        z-index: 0;
+      }
+  
+      .hidden__slide.left_side {
+        opacity: 1;
+        filter: none;
+        transform: none;
+        transition: none;
+      }
+
+      .left_side {
+        left: -90px;
+      }
+
+      .right_side {
+        left: 70px;
+        border-style: none;
+      }
+  
+      .left_side::before {
+        display: none;
+      }
+
+      .right_side::before {
+        display: none;
+      }
+      
+      .cv__item div p {
+        display: none;
+      }
+
+      .cv__item div time {
+        display: none;
+      }
+
+      .cv__item div span {
+        display: none;
+      }
+  
+    }    
+  }
+
   #social_media {
     display: none;
     position: relative; 
@@ -545,7 +664,7 @@
   .social_media__container {
     display: flex;
     justify-content: space-evenly;
-    width: 600px;
+    width: 359px;
   }
 
   .social_media__container svg {

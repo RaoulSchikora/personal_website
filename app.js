@@ -154,7 +154,7 @@ cvItemDivs.forEach(function (elem) {
     elem.style.height = (numMonth * DIST_TIMELINE_EVENTS - PADDING_TOP) + 'px';
     if (numMonth < 10) {
         elem.style.padding = '0px 15px';
-    }
+    } 
 });
 
 // set cv item divs at the right height position
