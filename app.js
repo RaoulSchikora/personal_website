@@ -9,9 +9,11 @@ const unset = 'unset';
 const fixed = 'fixed';
 const sticky = 'sticky';
 const mainContainer = document.getElementById('start_window');
-const toggleBtn = document.getElementById('toggle_menu');
+const bars = document.getElementById('bars');
+const slideInMenu = document.querySelector('.slide_in_menu');
+const input = document.getElementById('check');
 const circle = document.getElementById('toggle_circle');
-const cvBtn = document.getElementById('cv_btn');
+const cvBtn = document.querySelectorAll('.cv_btn');
 const firstName = document.getElementById('first_name');
 const surname = document.getElementById('surname');
 const cvSection = document.getElementById('cv');
@@ -25,7 +27,7 @@ const cvListContainer = document.getElementById('cv__list_container');
 const cvItems = document.querySelectorAll('.cv__item');
 const toggleMenusSmall = document.querySelectorAll('.toggle_menu_small');
 const socialMedia = document.getElementById('social_media');
-const contactsBtn = document.getElementById('contacts_btn');
+const contactsBtn = document.querySelectorAll('.contacts_btn');
 
 const DIST_TIMELINE_EVENTS = 10;
 const PADDING_TOP = 5;
@@ -83,10 +85,11 @@ toggleMenusSmall.forEach((elem) => elem.addEventListener('click', function () {
         toggleCircle.classList.add('menu__clicked');
         mainContainer.scrollIntoView();
     }
+
 }));
 
 // add event listener to CV-button opening CV-Section on click
-cvBtn.addEventListener('click', function () {
+cvBtn.forEach((elem) => elem.addEventListener('click', function () {
     if (cvSection.style.display == none)  {
         cvSection.style.display = flex;
         if (cvListContainer.style.transform == '') {
@@ -102,12 +105,13 @@ cvBtn.addEventListener('click', function () {
     if (socialMedia.style.display == none) {
         socialMedia.style.display = flex;
     }
-});
+    makeHamburger();
+}));
 
 // add event listener to Contacts-button opening the social_media container
 // and hides the cvSection container and removes the slide_in class from
 // the contained divs
-contactsBtn.addEventListener('click', function () {
+contactsBtn.forEach((elem) => elem.addEventListener('click', function () {
     if (socialMedia.style.display == none) {
         socialMedia.style.display = flex;
     }
@@ -118,13 +122,13 @@ contactsBtn.addEventListener('click', function () {
             elem.classList.remove('show__slide_in');
         });
     }
-});
+}));
 
-// add event listener to toggleBtn canceling the wobble-animation
+// add event listener to all label canceling the wobble-animation
 // once the toggle menu has been toggled for the first time
-toggleBtn.addEventListener('click', function (){
+input.labels.forEach((elem) => elem.addEventListener('click', function (){
     circle.style.animation = unset;
-});
+}));
 
 // calculate and set the length of the cv-timeline
 cvTimeline.style.height =
@@ -163,6 +167,11 @@ cvItemDivs.forEach(function (elem) {
 
 });
 
+bars.addEventListener('click', function (){
+    slideInMenu.classList.toggle('active');
+    bars.classList.toggle('cross');
+});
+
 /* ----- Utils ----- */
 
 // returns the minimal date of the elements, each having a datetime
@@ -199,3 +208,9 @@ function getNumOfMonths(from, to) {
     let months = fullYears * 12 + to.getMonth() + (12 - from.getMonth() + 1);
     return months;
 };
+
+// transforms the hamburger menu back into its state
+function makeHamburger() {
+    slideInMenu.classList.remove('active');
+    bars.classList.remove('cross');
+}

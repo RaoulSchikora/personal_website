@@ -13,6 +13,26 @@
 <body>
     <!-- Name section -->
     <div class="main">
+        <div class="main__menu" id="hamburger_menu">
+            <div id="bars">
+                <span class="bar"></span> 
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <nav class="navbar slide_in_menu">
+                <ul class="navbar__menu">
+                    <li class="navbar__menu">
+                        <a href='#personal_description'><label for="check" id="about_btn" onclick="makeHamburger()">About</label></a>
+                    </li>
+                    <li class="navbar__menu">
+                        <a href='#cv' class="cv_btn">Curriculum Vitae</a>
+                    </li>
+                    <li class="navbar__menu">
+                        <a href="#social_media" class="contacts_btn">Contacts</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
         <div class="main__container" id="start_window">
             <div class="main__content">
                 <input id="check" type="checkbox" />
@@ -40,10 +60,10 @@
                     <nav class="navbar">
                         <ul class="navbar__menu">
                             <li class="navbar__item">
-                                <a href='#cv' id="cv_btn">Curriculum Vitae</a>
+                                <a href='#cv' class="cv_btn">Curriculum Vitae</a>
                             </li>
                             <li class="navbar__item">
-                                <a href="#social_media" id="contacts_btn">Contacts</a>
+                                <a href="#social_media" class="contacts_btn">Contacts</a>
                             </li>
                         </ul>
                     </nav>
@@ -177,7 +197,7 @@
     </div>
     <div class="disclaimer">
         <div class="disclaimer__container">
-            This site is currently under construction
+            This website is currently under construction
         </div>
     </div>
     <script src="app.js"></script>
