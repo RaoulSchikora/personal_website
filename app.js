@@ -8,6 +8,7 @@ const flex = 'flex';
 const unset = 'unset';
 const fixed = 'fixed';
 const sticky = 'sticky';
+const mainContainer = document.getElementById('start_window');
 const toggleBtn = document.getElementById('toggle_menu');
 const circle = document.getElementById('toggle_circle');
 const cvBtn = document.getElementById('cv_btn');
@@ -80,7 +81,7 @@ toggleMenusSmall.forEach((elem) => elem.addEventListener('click', function () {
         toggleCircle.classList.remove('menu__clicked');
     } else {
         toggleCircle.classList.add('menu__clicked');
-        firstName.scrollIntoView();
+        mainContainer.scrollIntoView();
     }
 }));
 
