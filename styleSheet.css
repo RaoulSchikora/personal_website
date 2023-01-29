@@ -614,13 +614,25 @@
     left: -100%;
     max-width: 500px;
     padding: 30px;
-    border-style: solid;
+    /* box-shadow: 5px 5px 5px #5a2721; */
+    border-style: dotted;
     border-color: #5a2721;
     border-radius: 10px;
     color: #5a2721;
     background: #f77062;
     z-index: -1;
     transition: opacity 200ms ease;
+  }
+
+  .pop_up p {
+    font-size: 23px;
+    font-weight: bold;
+    color: #5a2721;
+  }
+
+  .pop_up time {
+    color: #fff;
+    font-weight: lighter;
   }
 
   .pop_up ul {
