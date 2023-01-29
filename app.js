@@ -175,12 +175,6 @@ bars.addEventListener('click', function (){
     bars.classList.toggle('cross');
 });
 
-// add for each cv__item info_text an event listener opening a window
-// with the cv__item details
-cvDetails.forEach(function(elem) {
-    // TODO
-});
-
 /* ----- Utils ----- */
 
 // returns the minimal date of the elements, each having a datetime
