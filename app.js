@@ -19,18 +19,20 @@ const surname = document.getElementById('surname');
 const cvSection = document.getElementById('cv');
 const cvTimesFrom = document.querySelectorAll('.cv__item .from');
 const cvTimesTo = document.querySelectorAll('.cv__item .to');
-const cvItemDivs = document.querySelectorAll('.cv__item div');
+const cvItemDivs = document.querySelectorAll('.cv__item .info_text');
 const cvTimeline = document.getElementById('timeline');
 const cvTimelineDotList = document.getElementById('timeline_dot_list');
 const cvTimelineContainer = document.getElementById('timeline__container');
 const cvListContainer = document.getElementById('cv__list_container');
 const cvItems = document.querySelectorAll('.cv__item');
+const cvDetails = document.querySelectorAll('.details');
 const toggleMenusSmall = document.querySelectorAll('.toggle_menu_small');
 const socialMedia = document.getElementById('social_media');
 const contactsBtn = document.querySelectorAll('.contacts_btn');
 
 const DIST_TIMELINE_EVENTS = 10;
 const PADDING_TOP = 5;
+const TIMEOUT_FOR_POP_UP_TO_DISAPPEAR = 200;
 
 const offsetFirstName = firstName.offsetTop;
 
@@ -116,7 +118,6 @@ contactsBtn.forEach((elem) => elem.addEventListener('click', function () {
         socialMedia.style.display = flex;
     }
     if (cvSection.style.display == flex) {
-        console.log('yeah1');
         cvSection.style.display = none;
         cvItemDivs.forEach((elem) => {
             elem.classList.remove('show__slide_in');
@@ -167,9 +168,17 @@ cvItemDivs.forEach(function (elem) {
 
 });
 
+// add an event listener to the bars changing it into a cross and
+// activating the small menu sliding in from above
 bars.addEventListener('click', function (){
     slideInMenu.classList.toggle('active');
     bars.classList.toggle('cross');
+});
+
+// add for each cv__item info_text an event listener opening a window
+// with the cv__item details
+cvDetails.forEach(function(elem) {
+    // TODO
 });
 
 /* ----- Utils ----- */
@@ -213,4 +222,29 @@ function getNumOfMonths(from, to) {
 function makeHamburger() {
     slideInMenu.classList.remove('active');
     bars.classList.remove('cross');
+};
+
+// funciton to toggle the visibility of pop_up windows
+function togglePopUp(id) {
+    var elem = document.getElementById(id);
+    if (elem.classList.contains('opened')) {
+        closePopUp(elem);
+    } else {
+        openPopUp(elem);
+    }
 }
+
+// function to open pop_up window
+function openPopUp(elem) {
+    elem.style.opacity = '1';
+    elem.classList.add('opened');
+    // document.getElementById('pop_up_background').display = 'block';
+};
+
+// function to close pop_up window
+function closePopUp(elem) {
+    elem.style.opacity = '0';
+    window.setTimeout(function() {
+        elem.classList.remove('opened');
+    }, TIMEOUT_FOR_POP_UP_TO_DISAPPEAR);
+};

@@ -37,8 +37,11 @@
         <div class="main__container" id="start_window">
             <div class="main__content">
                 <input id="check" type="checkbox" />
-                <div id="first_name">RA<label for="check"><div id="toggle_menu">
-                    <div id="toggle_circle"></div></div></label>L
+                <div id="first_name">RA<label for="check">
+                        <div id="toggle_menu">
+                            <div id="toggle_circle"></div>
+                        </div>
+                    </label>L
                 </div>
                 <div id="personal_description">
                     <label for="check">
@@ -93,8 +96,8 @@
                 <div id="cv__list_container">
                     <ul class="cv__list">
                         <li class="cv__item">
-                            <a href="https://www.tu.berlin" target="_blank">
-                                <div class="left_side hidden__slide">
+                            <a href="#bachelor" onclick="togglePopUp('bachelor')">
+                                <div class="info_text left_side hidden__slide">
                                     <p>B.Sc. Mathematics</p>
                                     <time class="from" datetime="2009-04">Apr 2009 -</time>
                                     <time class="to" datetime="2013-09">Sep 2013</time><br>
@@ -103,8 +106,8 @@
                             </a>
                         </li>
                         <li class="cv__item">
-                            <a href="https://www.tu.berlin" target="_blank">
-                                <div class="left_side hidden__slide">
+                            <a href="#master_math" onclick="togglePopUp('master_math')">
+                                <div class="info_text left_side hidden__slide">
                                     <p>Studies of Mathematics/Human Factors</p>
                                     <time class="from" datetime="2014-10">Oct 2014 -</time>
                                     <time class="to" datetime="2016-09">Sep 2016</time><br>
@@ -113,8 +116,8 @@
                             </a>
                         </li>
                         <li class="cv__item">
-                            <a href="https://www.uibk.ac.at" target="_blank">
-                                <div class="left_side hidden__slide">
+                            <a href="#master_info" onclick="togglePopUp('master_info')">
+                                <div class="info_text left_side hidden__slide">
                                     <p>M.Sc. Computer Science</p>
                                     <time class="from" datetime="2018-10">Oct 2018 -</time>
                                     <time class="to" datetime="2022-11">Nov 2022</time><br>
@@ -123,8 +126,8 @@
                             </a>
                         </li>
                         <li class="cv__item">
-                            <a href="https://www.univ-grenoble-alpes.fr/english/" target="_blank">
-                                <div class="right_side hidden__slide">
+                            <a href="#erasmus" onclick="togglePopUp('erasmus')">
+                                <div class="info_text right_side hidden__slide">
                                     <p>Erasmus</p>
                                     <time class="from" datetime="2013-09">Sep 2013 -</time>
                                     <time class="to" datetime="2014-08">Aug 2014</time><br>
@@ -133,8 +136,8 @@
                             </a>
                         </li>
                         <li class="cv__item">
-                            <a href="https://www.mercedes-benz-techinnovation.com/de/" target="_blank">
-                                <div class="right_side hidden__slide">
+                            <a href="#tss" onclick="togglePopUp('tss')">
+                                <div class="info_text right_side hidden__slide">
                                     <p>Working Student as Software Developer</p>
                                     <time class="from" datetime="2015-07">Jun 2015 -</time>
                                     <time class="to" datetime="2016-06">May 2016</time><br>
@@ -143,8 +146,8 @@
                             </a>
                         </li>
                         <li class="cv__item">
-                            <a href="https://youtu.be/8qXhmvtXX8E" target="_blank">
-                                <div class="right_side hidden__slide">
+                            <a href="#drone" onclick="togglePopUp('drone')">
+                                <div class="info_text right_side hidden__slide">
                                     <p>Drone Operator and Camera</p>
                                     <time class="from" datetime="2016-09">2016/</time>
                                     <time class="to" datetime="2017-06">2017</time><br>
@@ -153,9 +156,8 @@
                             </a>
                         </li>
                         <li class="cv__item">
-                            <a href="https://www.kickstarter.com/projects/1365297844/kuhkubus-3d-escher-figures"
-                                target="_blank">
-                                <div class="right_side hidden__slide">
+                            <a href="#kcampaign" onclick="togglePopUp('kcampaign')">
+                                <div class="info_text right_side hidden__slide">
                                     <p>Successful launch of a Kickstarter Campaign</p>
                                     <time class="from" datetime="2017-07">2017/</time>
                                     <time class="to" datetime="2018-09">2018</time><br>
@@ -164,8 +166,8 @@
                             </a>
                         </li>
                         <li class="cv__item">
-                            <a href="http://cl-informatik.uibk.ac.at/teaching/ws20/ds/organisation.php" target="_blank">
-                                <div class="right_side hidden__slide">
+                            <a href="#lector" onclick="togglePopUp('lector')">
+                                <div class="info_text right_side hidden__slide">
                                     <p>Pro-Seminar Lector</p>
                                     <time class="from" datetime="2020-10">Oct 2020 -</time>
                                     <time class="to" datetime="2021-06">Jun 2021</time><br>
@@ -173,6 +175,142 @@
                                 </div>
                             </a>
                         </li>
+                    </ul>
+                </div>
+                <div class="pop_up" id="bachelor">
+                    <div class="close_cross" onclick="togglePopUp('bachelor')">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <span>@ Technical University Berlin. Click
+                        <a href="https://www.tu.berlin" target="_blank">
+                            here
+                        </a> to visit.
+                    </span><br>
+                    <ul>
+                        <li>Bachelor Thesis: 'Das konforme Dual von vier Punkten im Raum' (german)
+                            [The conformal dual of a quadruplet of points]
+                        </li>
+                        <li>Geometry</li>
+                        <li>Algorithmic and Discrete Mathematics</li>
+                    </ul>
+                </div>
+                <div class="pop_up" id="master_math">
+                    <div class="close_cross" onclick="togglePopUp('master_math')">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <span>@ Technical University Berlin. Click
+                        <a href="https://www.tu.berlin" target="_blank">
+                            here
+                        </a> to visit.
+                    </span>
+                    <ul>
+                        <li>Mathematical Visualisation</li>
+                        <li>Geometrical and Algorithmic Implementation</li>
+                        <li>Human Factor Engineering</li>
+                    </ul>
+                </div>
+                <div class="pop_up" id="master_info">
+                    <div class="close_cross" onclick="togglePopUp('master_info')">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <span>@ University of Innsbruck. Click
+                        <a href="https://www.uibk.ac.at" target="_blank">
+                            here
+                        </a>to visit.
+                    </span>
+                    <ul>
+                        <li>Master thesis: 'On Orthogonality of Self-Distributivity' <a
+                                href="https://diglib.uibk.ac.at/ulbtirolhs/content/titleinfo/8160517">
+                                Link
+                            </a></li>
+                        <li>Term rewriting</li>
+                        <li>Computational Logic</li>
+                        <li>Information Security</li>
+                        <li>Mashine Learning</li>
+                        <li>Compiler construction</li>
+                    </ul>
+                </div>
+                <div class="pop_up" id="erasmus">
+                    <div class="close_cross" onclick="togglePopUp('erasmus')">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <span>@ Université Joseph Fourier. Click
+                        <a href="https://www.univ-grenoble-alpes.fr/english/" target="_blank">
+                            here
+                        </a>to visit.
+                    </span>
+                    <ul>
+                        <li>Two semesters</li>
+                        <li>Funded by Erasmus</li>
+                    </ul>
+                </div>
+                <div class="pop_up" id="tss">
+                    <div class="close_cross" onclick="togglePopUp('tss')">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <span>@ Daimler Tss (today
+                        <a href="https://www.mercedes-benz-techinnovation.com/de/" target="_blank">
+                            Mecedes-Benz Techinnovation</a>).
+                    </span>
+                    <ul>
+                        <li>Developing a truck-rental software in a scrum team</li>
+                        <li>Java, Javascript, HTML/CSS, SQL</li>
+                        <li>Bug-fixing</li>
+                        <li>Costumer support</li>
+                    </ul>
+                </div>
+                <div class="pop_up" id="drone">
+                    <div class="close_cross" onclick="togglePopUp('drone')">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <span>Corporate video for the city of Schmalkalden.
+                        <a href="https://youtu.be/8qXhmvtXX8E" target="_blank">
+                            Video</a>.
+                    </span>
+                    <ul>
+                        <li>Drone operator</li>
+                        <li>Camera</li>
+                    </ul>
+                </div>
+                <div class="pop_up" id="kcampaign">
+                    <div class="close_cross" onclick="togglePopUp('kcampaign')">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <span>Kuhkubus - 3D Escher Figures by
+                        <a href="https://www.contralex.com" target="_blank">
+                            Alex Gürten</a>. Click
+                        <a href="https://www.kickstarter.com/projects/1365297844/kuhkubus-3d-escher-figures"
+                            target="_blank">
+                            here
+                        </a>for the campaign.
+                    </span>
+                    <ul>
+                        <li>Marketing</li>
+                        <li>Logistics</li>
+                    </ul>
+                </div>
+                <div class="pop_up" id="lector">
+                    <div class="close_cross" onclick="togglePopUp('lector')">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <span>@ Department of Computer Science, University of Innsbruck.
+                        <a href="http://cl-informatik.uibk.ac.at/teaching/ws20/ds/organisation.php"
+                            target="_blank">
+                            Link
+                        </a>to course homepage.
+                    </span>
+                    <ul>
+                        <li>Lecturing the pro-seminar in discrete structures of the B.Sc. computer science curriculum </li>
+                        <li>Creation of exercises and exams</li>
+                        <li>Feedback on homework</li>
                     </ul>
                 </div>
             </div>
