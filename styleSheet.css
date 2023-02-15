@@ -310,6 +310,7 @@
 
   #cv {
     display: none;
+    overflow: hidden;
     position: relative;
     top: 25vh;
     font-weight: bold;
@@ -388,7 +389,7 @@
     border-radius: 0.5em;
     padding: 0.116em;
     margin-top: 0.2em;
-    margin-right: 0.2em;
+    margin-right: 0.4em;
     transition: opacity 0.3s ease;
   }
 
@@ -412,6 +413,10 @@
 
   .menu__clicked {
     transform: translateX(0.4em);
+  }
+
+  #cv_and_timeline {
+    width: 100%;
   }
 
   #timeline__container {
@@ -478,7 +483,7 @@
     top: 0;
     width: 500px;
     padding: 5px 15px;
-    background: #f77062;
+    background: #fc8777;
   }
   
   .cv__item .info_text::before {
@@ -510,7 +515,7 @@
   .right_side::before {
     left: -15px;
     border-width: 8px 16px 8px 0;
-    border-color: transparent #f77062 transparent transparent;
+    border-color: transparent #fc8777 transparent transparent;
   }
 
   .left_side {
@@ -522,7 +527,7 @@
   .left_side::before {
     right: -15px;
     border-width: 8px 0 8px 16px;
-    border-color: transparent transparent transparent #f77062;
+    border-color: transparent transparent transparent #fc8777;
   }
 
   .cv__item p {
@@ -549,7 +554,7 @@
     width: 50px;
     height: 50px;
     border-radius: 25px;
-    background: #f77062;
+    background: #fc8777;
   }
 
   .info_text:hover .icon {
@@ -576,7 +581,7 @@
     width: 52px;
     height: 52px;
     border-radius: 26px;
-    background: #f77062;
+    background: #fc8777;
     filter: blur(2px);
     z-index: 2;
   }
@@ -591,7 +596,7 @@
     left: 7px;
     height: 35px;
     width: 35px;
-    fill: #f77062;
+    fill: #fc8777;
     z-index: 4;
   }
 
@@ -642,7 +647,7 @@
     border-color: #5a2721;
     border-radius: 10px;
     color: #5a2721;
-    background: #f77062;
+    background: #fc8777;
     z-index: -1;
     transition: opacity 200ms ease;
   }
@@ -745,7 +750,7 @@
     .left_side::before {
       left: -15px;
       border-width: 8px 16px 8px 0;
-      border-color: transparent #f77062 transparent transparent;
+      border-color: transparent #fc8777 transparent transparent;
     }
 
     .left_side:hover:before {
@@ -865,7 +870,7 @@
     font-size: 1rem;
     text-align: center;
     width: 100%;
-    background-color: #f77062;
+    background-color: #fc8777;
     color: #fff;
     z-index: 2;
     padding: 0.5rem;

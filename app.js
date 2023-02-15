@@ -87,7 +87,6 @@ toggleMenusSmall.forEach((elem) => elem.addEventListener('click', function () {
         toggleCircle.classList.add('menu__clicked');
         mainContainer.scrollIntoView();
     }
-
 }));
 
 // add event listener to CV-button opening CV-Section on click
@@ -98,10 +97,10 @@ cvBtn.forEach((elem) => elem.addEventListener('click', function () {
             // translate the container of the CV list such that it overlays
             // the container of the timeline
             let yDirect = cvTimelineContainer.offsetHeight;
+            const PADDING = 40;
+            const DOT_HEIGHT = 15;
             cvListContainer.style.transform = 
-            'translateY(' + (-yDirect + 55) + 'px)';
-            // the plus 55 arise from padding top (40px) on the timeline
-            // and 15px from the dot
+            'translateY(' + (-yDirect + PADDING + DOT_HEIGHT) + 'px)';
         }
     }
     if (socialMedia.style.display == none) {
@@ -232,7 +231,6 @@ function togglePopUp(id) {
 function openPopUp(elem) {
     elem.style.opacity = '1';
     elem.classList.add('opened');
-    // document.getElementById('pop_up_background').display = 'block';
 };
 
 // function to close pop_up window
